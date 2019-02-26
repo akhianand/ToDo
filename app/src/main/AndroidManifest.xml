@@ -22,7 +22,11 @@
 
         <activity
             android:name=".ToDoFragment">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.akhilesh.todo.MainActivity" />
         </activity>
     </application>
 
 </manifest>
+

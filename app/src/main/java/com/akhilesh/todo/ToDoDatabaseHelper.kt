@@ -64,8 +64,16 @@ class ToDoDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
     }
 
 
-    override fun removeData(id: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun removeData(id: Int) : Boolean {
+        val db = this.writableDatabase
+
+        val selection = "${ToDoReaderContract.ToDoEntry.COLUMN_NAME_ID} LIKE ?"
+        val selectionArgs = arrayOf(""+id)
+        val deletedRows = db.delete(ToDoReaderContract.ToDoEntry.TABLE_NAME, selection, selectionArgs)
+        db.close()
+        return (Integer.parseInt("$deletedRows") != -1)
+
+
     }
 
     override fun getAllData() : MutableList<ToDoDataEntry> {
