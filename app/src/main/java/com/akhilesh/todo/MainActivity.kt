@@ -1,7 +1,6 @@
 package com.akhilesh.todo
 
-import android.R.attr.dial
-import android.annotation.SuppressLint
+
 import android.app.DatePickerDialog
 import android.app.Dialog
 import android.os.Bundle
@@ -91,10 +90,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                val transaction = supportFragmentManager.beginTransaction()
+                transaction.add(R.id.container, Settings())
+                return (transaction.commit() != -1)
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 
 
     override fun onResume() {
