@@ -8,6 +8,8 @@ object ToDoReaderContract {
         const val COLUMN_NAME_HEADLINE = "headline"
         const val COLUMN_NAME_DESCRIPTION = "description"
         const val COLUMN_NAME_DEADLINE = "deadline"
+        const val COLUMN_NAME_ID = "id"
+
 
     }
 }

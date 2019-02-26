@@ -102,17 +102,29 @@
         android:ems="10"
         android:hint="  Deadline"
         android:inputType="date"
+        android:enabled="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editDescription" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <ImageButton
+        android:id="@+id/calendarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="mm/dd/yyyy"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        android:src="@drawable/ic_date_range_black_24dp"
         app:layout_constraintStart_toEndOf="@+id/editDeadline"
+        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Click to Set \nDeadline"
+        app:layout_constraintStart_toEndOf="@+id/calendarButton"
         app:layout_constraintTop_toBottomOf="@+id/editDescription" />
 
 
